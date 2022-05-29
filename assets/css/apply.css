@@ -1,0 +1,56 @@
+* {box-sizing: border-box;}
+.tab{display: none; width: 100%; height: 50%;margin: 0px auto;}
+.current{display: block;}
+
+body {background-color: #f1f1f1;}
+
+#applyForm {background-color: #ffffff; margin: 100px auto; font-family: Raleway; padding: 40px; width: 70%; min-width: 300px;margin-top: 0px; }
+#EditapplyForm {background-color: #ffffff; margin: 100px auto; font-family: Raleway; padding: 40px; width: 73%; min-width: 300px;margin-top: 0px; }
+
+h2 {text-align: center; margin-bottom: 2rem; }
+
+.container, .container-lg, .container-md, .container-sm, .container-xl { max-width: 1365px;}
+
+input {
+    padding: 10px;
+    /* width: 100%;    */
+    font-size: 17px; 
+    font-family: Raleway; 
+    border: 1px solid #aaaaaa; 
+}
+#applyForm label{
+	font-size: 14px;
+}
+
+
+button {background-color: #47759e; color: #ffffff; border: none; padding: 10px 20px; font-size: 17px; font-family: Raleway; cursor: pointer; }
+
+button:hover {opacity: 0.8; }
+
+.previous {background-color: #bbbbbb; }
+
+/* Make circles that indicate the steps of the form: */
+.step {height: 40px; width: 230px; cursor: pointer; margin: 0 2px; color: #fff; background-color: #d76652; border: none; border-radius: 15px; display: inline-block; opacity: 0.8; padding: 10px}
+
+.step.active {opacity: 1; background-color: #47759e;}
+
+.step.finish {background-color: #47759e; }
+
+.error {color: #f00; }
+
+/* Custom added */
+.section-head {
+    text-decoration: underline;
+    font-style: italic;
+    color: #47759e;
+    font-weight: bold;
+}
+.UploadDoc td{
+    text-align: center;
+    background: #47759e;
+    color: white;
+}
+.certificate td{
+    text-align: center;
+    padding-top: 10px;
+}

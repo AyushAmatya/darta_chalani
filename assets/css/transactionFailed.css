@@ -1,0 +1,83 @@
+.tran-failed-sec{
+    background-color: #e9ecef;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #e9ecef;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100vh;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.tran-failed-inner{
+    max-width: 360px;
+}
+.tran-failed-sec .card{
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+}
+.tran-failed-sec .card .card-body{
+    text-align: center;
+    padding: 50px 20px;
+}
+.tran-failed-inner svg {
+    width: 80px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .tran-failed-inner .path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+  }
+  .tran-failed-inner .path.circle {
+      -webkit-animation: tranDash .9s ease-in-out;
+      animation: tranDash .9s ease-in-out;
+    }
+    .tran-failed-inner .path.line {
+      stroke-dashoffset: 1000;
+      -webkit-animation: tranDash .9s .35s ease-in-out forwards;
+      animation: tranDash .9s .35s ease-in-out forwards;
+    }
+    .tran-failed-inner p.error {
+        color: #D06079;
+        margin: 20px 0 30px;
+        font-size: 1.5em;
+    }
+    .tran-failed-inner button{
+        margin: 20px 5px;
+    }
+    .tran-failed-inner .btn-tranFailed{
+        color: #fff;
+        background-color: #005a88;
+        border-color: #005a88;
+    }
+    .tran-failed-inner .btn-outline-tranFailed{
+        color: #005a88;
+        border-color: #005a88;
+        background: transparent;
+    }
+  @-webkit-keyframes tranDash {
+    0% {
+      stroke-dashoffset: 1000;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes tranDash {
+    0% {
+      stroke-dashoffset: 1000;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  
