@@ -27,8 +27,9 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		// var_dump('here'); die;
 		if($this->isUserLoggedIn){ 
-			var_dump('loggedin'); die;
+			// var_dump('loggedin'); die;
 		}else{
 			// Get messages from the session 
 			if($this->session->userdata('success_msg'))
