@@ -46,7 +46,7 @@
 											<div class="form-check mb-2">
 												<input class="form-check-input" type="checkbox" id="autoSizingCheck">
 												<label class="form-check-label" for="autoSizingCheck">
-												Remember me            
+												<?php echo $this->lang->line('remember_me'); ?>         
 												</label>
 											</div>
 											</div> 

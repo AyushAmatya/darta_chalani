@@ -6,7 +6,7 @@ class Welcome extends CI_Controller {
     public function __construct() {
         parent::__construct();
 		$this->load->helper('html');
-		$this->lang->load('content','english');
+		$this->load->model('UserModel');
 		$this->load->library('form_validation'); 
 		$this->isUserLoggedIn = $this->session->userdata('isUserLoggedIn');
     }
@@ -29,32 +29,31 @@ class Welcome extends CI_Controller {
 	{
 		// var_dump('here'); die;
 		if($this->isUserLoggedIn){ 
-			// var_dump('loggedin'); die;
+			redirect('dashboard');
 		}else{
-			// Get messages from the session 
-			if($this->session->userdata('success_msg'))
-			{ 
-				$data['success_msg'] = $this->session->userdata('success_msg'); 
-				$this->session->unset_userdata('success_msg'); 
-			} 
-			if($this->session->userdata('error_msg'))
-			{ 
-				$data['error_msg'] = $this->session->userdata('error_msg'); 
-				$this->session->unset_userdata('error_msg'); 
-			}
 			// If login request submitted 
 			if($this->input->post('loginSubmit')){
 				$this->form_validation->set_rules('username', 'username', 'required'); 
             	$this->form_validation->set_rules('password', 'password', 'required');
 				if($this->form_validation->run() == true){  
-					$this->session->set_flashdata('error_msg','Username and Password both are required'); 
+					$cred['username'] = $this->input->post('username');
+					$cred['password'] = $this->input->post('password');
+					$checkLogin = $this->UserModel->checkLogInCred($cred);
+					if ($checkLogin) {
+						$this->session->set_userdata('isUserLoggedIn', TRUE); 
+                    	$this->session->set_userdata('userId', $checkLogin['EMPLOYEE_ID']); 
+						
+						$this->session->set_userdata('name', $checkLogin['FIRST_NAME']);
+						redirect('dashboard');
+					} else {
+						$this->session->set_flashdata('msg',$this->lang->line('unmatched_cred')); 
+						redirect('welcome');
+					}
 				}else{
-					$this->session->set_flashdata('error_msg','Username and Password both are required'); 
+					$this->session->set_flashdata('msg',$this->lang->line('cred_required')); 
+					redirect('welcome');
 				}
-				// echo '<pre>'; print_r($this->session->flashdata('')); die;
-				$this->session->set_flashdata('msg', 'MAtched ');
 				
-				redirect('welcome');
 			}
 			$this->load->view('templates/header');
 			$this->load->view('login/login');
@@ -67,10 +66,13 @@ class Welcome extends CI_Controller {
         $this->session->set_userdata('site_lang', $language);
 		redirect($_SERVER['HTTP_REFERER']);
 	}
-	public function test()
-	{
-		// var_dump('here'); die;
-		$this->load->view('test');
-	}
-	  
+
+	public function logout()
+    {
+        $this->session->unset_userdata('isUserLoggedIn');
+        $this->session->unset_userdata('userId');
+        $this->session->unset_userdata('name');
+        $this->session->sess_destroy();
+        redirect('welcome');
+    }
 }

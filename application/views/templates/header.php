@@ -18,8 +18,16 @@
 	<script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>	
 	<script type='text/javascript' src='<?php echo base_url('assets/js/jquery.validate.min.js'); ?>'></script>
 	<script type='text/javascript' src='<?php echo base_url('assets/js/register.js'); ?>'></script>
+
+	<!-- js tree -->
+	
+	<script src="<?php echo base_url(); ?>assets/dist/jstree.min.js"></script>
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/themes/default/style.min.css">
+
 	<script src="<?php echo base_url(); ?>assets/global/nepalidate/nepali.datepicker.v2.1.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/custom.js"></script>	
 </head>
 
 <body>
+
+
