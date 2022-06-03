@@ -13,7 +13,7 @@
 	<!-- Vendor -->
 	<link href="<?php echo base_url('/assets/global/bootstrap-toastr/toastr.min.css'); ?>" rel="stylesheet" type="text/css">
 	<link href="<?php echo base_url() ?>assets/css/jbox/jBox.all.min.css" rel="stylesheet">
-	<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 	<script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>	
 	<script type='text/javascript' src='<?php echo base_url('assets/js/jquery.validate.min.js'); ?>'></script>
@@ -24,6 +24,9 @@
 	<script src="<?php echo base_url(); ?>assets/dist/jstree.min.js"></script>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/themes/default/style.min.css">
 
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" />
+	
 	<script src="<?php echo base_url(); ?>assets/global/nepalidate/nepali.datepicker.v2.1.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/custom.js"></script>	
 </head>
