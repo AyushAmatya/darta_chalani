@@ -2,21 +2,22 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class MenuController extends CI_Controller {
+    // public $data;
     public function __construct() {
         parent::__construct();
 		$this->load->helper('html');
 		$this->load->model('MenuModel');
 		$this->lang->load('content','english');
         $this->load->library('form_validation'); 
-        $data['globalMenu'] =  $this->MenuModel->getGlobalMenu();
+        // $this->data = "dcsd";
 		$this->isUserLoggedIn = $this->session->userdata('isUserLoggedIn');
     }
     public function index()
     {
         if($this->isUserLoggedIn){ 
+            
             $data['menu'] = $this->MenuModel->getMenus();
             $data['roles'] = $this->MenuModel->getRoles();
-            // var_dump($data['menu']['MENU_CODE']); die;
 			$this->load->view('templates/header');
             $this->load->view('templates/nav');
             $this->load->view('templates/sidebar',$data);

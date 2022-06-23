@@ -10,7 +10,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-8">
-                        <?php echo $this->lang->line('available_menu') ?> <?php echo $urlBootstrap ?>
+                        <?php echo $this->lang->line('available_menu') ?> 
                     </div>
                     <div class="col-md-4 text-right">
                         <button type="button" data-toggle="modal" data-target=".bd-example-modal-lg" class="btn btn-secondary"><?php echo $this->lang->line('add_new_menu') ?><i class="fa fa-plus"></i></button>
